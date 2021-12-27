@@ -113,7 +113,7 @@ buildscript {
     
 ````
 
-### 3.3 初始化FormModule的各种配信息
+### 3.3 跳转表单详情页面之前，一定要初始化FormModule的配置信息
 
 ````
 
