@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <com.hollysmart.testcollectionmodule.statusbar.StatusBarHeightView
+        android:id="@+id/ll_shang"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/form_module_blue"
+        android:orientation="vertical"
+        app:form_use_type="form_use_padding_top">
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:background="@color/form_module_blue"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/ib_back"
+                android:layout_width="45dp"
+                android:layout_height="fill_parent"
+                android:background="@color/form_module_transparent"
+                android:padding="16dp"
+                android:src="@drawable/form_module_icon_back_white" />
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="健身器材列表"
+                android:textColor="@color/form_module_white"
+                android:textSize="@dimen/form_module_text_da2" />
+
+        </RelativeLayout>
+
+    </com.hollysmart.testcollectionmodule.statusbar.StatusBarHeightView>
+
+    <LinearLayout
+        android:id="@+id/ll_search"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@id/ll_shang"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="5dp"
+        android:background="@color/form_module_background2"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+
+        <TextView
+            android:id="@+id/ed_username"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@color/form_module_transparent"
+            android:gravity="center_vertical"
+            android:lines="1"
+            android:text="关键字搜索"
+            android:textColor="@color/form_module_black3"
+            android:textColorHint="@color/form_module_white"
+            android:textSize="@dimen/form_module_text_zhong" />
+
+    </LinearLayout>
+
+
+    <com.scwang.smart.refresh.layout.SmartRefreshLayout
+        android:id="@+id/smart_refresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/rl_bottom"
+        android:layout_below="@+id/ll_search"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="10dp">
+
+        <com.d.lib.xrv.LRecyclerView
+            android:id="@+id/lv_treeList"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:divider="@color/form_module_transparent"
+            android:dividerHeight="0sp" />
+
+    </com.scwang.smart.refresh.layout.SmartRefreshLayout>
+
+    <LinearLayout
+        android:id="@+id/lay_fragment_ProdutEmpty"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/img_fragment_ProdutEmpty"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:scaleType="fitXY"
+            android:src="@mipmap/form_module_icon_empty" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="15dp"
+            android:text="无数据，请添加"
+            android:textSize="@dimen/form_module_text_zhong" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_bottom"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="10dp"
+        android:background="@drawable/form_module_btn_shape"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="添加"
+            android:textColor="@color/form_module_white"
+            android:textSize="@dimen/form_module_text_zhong" />
+
+    </RelativeLayout>
+
+
+</RelativeLayout>
