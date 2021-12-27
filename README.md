@@ -116,22 +116,23 @@ buildscript {
 ### 3.3 初始化FormModule的各种配信息
 
 ````
+
     //表单模块服务器地址
     public String API_SERVER_URL = "http://10.2.9.150:8885";
     //请求Token
     public static String TOKEN = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NDA1ODgyODUsInVzZXJuYW1lIjoiamVlY2cifQ.iGGoow0LLp3_kdeaYSgUfOgY3RyWstCEgAbfey-srYw";
     //文件上传七牛地址
-    public String PIC_IP = "https://qiniu.hollysmart.com.cn/";
+    public String PIC_IP = "https://****.*****.com.cn/";
     //项目名（七牛上传文件，文件名前缀拼接项目名）
     public String PROJECT_NAME = "changyuansports";
     public String SDCARD_ROOT = "smart_sport";
     //七牛文件上传AK
-    public String QINIU_ACCESSKEY = "28fPX_YqJodo-uikTzYZWDv0koVKcqvx1erzEHks";
+    public String QINIU_ACCESSKEY = "28fPX_YqJodo-*************";
     //七牛文件上传SK
-    public String QINIU_SECRETKEY = "iZZJ7B1WFJ-Ulsry6xASIX6nL2itJAC7CkWQd-Mj";
+    public String QINIU_SECRETKEY = "iZZJ7B1WFJ-***********-Mj";
     //七牛文件上传scope
     public String QINIU_SCOPENAME = "atspace";
-
+    
     private void initFormModule() {
         //表单模块服务器地址
         FormModuleInit.initFormServerUrl(API_SERVER_URL);
