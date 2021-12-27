@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <com.hollysmart.formmodule.statusbar.StatusBarHeightView
+        android:id="@+id/ll_shang"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/form_module_blue"
+        android:orientation="vertical"
+        app:form_use_type="form_use_padding_top">
+
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:background="@color/form_module_blue">
+
+
+            <ImageView
+                android:id="@+id/iv_back"
+                android:layout_width="50dp"
+                android:layout_height="fill_parent"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:padding="16dp"
+                android:src="@drawable/form_module_icon_back_white" />
+
+
+            <TextView
+                android:id="@+id/tv_GPSInfo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="位置选择"
+                android:textColor="@color/form_module_white"
+                android:textSize="@dimen/form_module_text_da2" />
+
+            <TextView
+                android:id="@+id/tv_save_loc"
+                android:layout_width="60dp"
+                android:layout_height="fill_parent"
+                android:layout_alignParentRight="true"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="确定"
+                android:textColor="@color/form_module_white" />
+
+        </RelativeLayout>
+
+    </com.hollysmart.formmodule.statusbar.StatusBarHeightView>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.amap.api.maps.MapView
+            android:id="@+id/map"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <ImageView
+            android:id="@+id/iv_center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:src="@drawable/form_module_cross" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_alignParentTop="true"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/tv_mark_lon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="经度"
+                android:textColor="@color/form_module_black" />
+
+            <TextView
+                android:id="@+id/tv_mark_lat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="纬度"
+                android:textColor="@color/form_module_black" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:visibility="gone">
+
+            <Button
+                android:id="@+id/btn_add"
+                android:layout_width="40dp"
+                android:layout_height="30dp"
+                android:layout_margin="20dp"
+                android:layout_weight="1"
+                android:background="@drawable/form_module_btn_shape"
+                android:text="添加"
+                android:textColor="@color/form_module_white"
+                android:textSize="@dimen/form_module_text_zhong" />
+
+            <Button
+                android:id="@+id/btn_chexiao"
+                android:layout_width="40dp"
+                android:layout_height="30dp"
+                android:layout_margin="20dp"
+                android:layout_weight="1"
+                android:background="@drawable/form_module_btn_shape"
+                android:text="撤销"
+                android:textColor="@color/form_module_white"
+                android:textSize="@dimen/form_module_text_zhong" />
+
+            <Button
+                android:id="@+id/btn_save"
+                android:layout_width="40dp"
+                android:layout_height="30dp"
+                android:layout_margin="20dp"
+                android:layout_weight="1"
+                android:background="@drawable/form_module_btn_shape"
+                android:text="保存"
+                android:textColor="@color/form_module_white"
+                android:textSize="@dimen/form_module_text_zhong" />
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="150dp"
+            android:gravity="right"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/bn_weixing"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/form_module_transparent"
+                android:src="@mipmap/form_module_icon_map_model_switch" />
+
+            <ImageButton
+                android:id="@+id/bn_dingwei"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@color/form_module_transparent"
+                android:src="@mipmap/form_module_icon_map_loc" />
+
+            <ImageButton
+                android:id="@+id/imagbtn_zoomIn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@color/form_module_transparent"
+                android:src="@mipmap/form_module_icon_map_zoom_in" />
+
+            <ImageButton
+                android:id="@+id/imagbtn_zoomOut"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@color/form_module_transparent"
+                android:src="@mipmap/form_module_icon_map_zoom_out" />
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+
+</LinearLayout>

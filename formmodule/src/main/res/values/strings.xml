@@ -1,0 +1,14 @@
+<resources>
+    <string name="form_model_app_name">FormModule</string>
+    <string name="form_model_connect_error">连接错误</string>
+    <string name="form_model_connect_timeout">连接超时</string>
+    <string name="form_model_bad_network">连接错误</string>
+    <string name="form_model_parse_error">解析错误</string>
+    <string name="form_model_token_expire">Token过期,请重新登陆获取Token</string>
+    <string name="form_model_unknown_error">未知错误</string>
+    <string name="form_model_progress_loading">加载中，请稍后。。。</string>
+
+    <string name="form_model_not_null">不能为空</string>
+
+
+</resources>

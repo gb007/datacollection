@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/ll_all"
+    android:background="@color/form_module_white"
+    android:orientation="vertical">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:padding="10dp">
+
+
+        <TextView
+            android:id="@+id/tv_bitian"
+            android:layout_width="8dp"
+            android:layout_height="wrap_content"
+            android:text="*"
+            android:layout_centerVertical="true"
+            android:textColor="@color/form_module_black3"
+            android:textSize="@dimen/form_module_text_zhong" />
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/tv_bitian"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/form_module_black3"
+            android:textSize="@dimen/form_module_text_zhong" />
+
+        <TextView
+            android:id="@+id/tv_value"
+            android:layout_width="150dp"
+            android:layout_height="30dp"
+            android:layout_toLeftOf="@+id/iv_arrorw"
+            android:layout_centerVertical="true"
+            android:textColor="@color/form_module_black3"
+            android:background="@color/form_module_background2"
+            android:textSize="@dimen/form_module_text_zhong" />
+
+        <TextView
+            android:id="@+id/tv_tishi"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="该项必填"
+            android:textColor="@color/form_module_red"
+            android:textSize="@dimen/form_module_text_zhong"
+            android:visibility="gone"/>
+
+
+        <ImageView
+            android:id="@+id/iv_arrorw"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentRight="true"
+            android:padding="5dp"
+            android:layout_centerVertical="true"
+            android:src="@drawable/form_module_arrow_bottom"/>
+    </RelativeLayout>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/child_recycle"
+        android:layout_width="match_parent"
+        android:layout_height="500dp"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@color/form_module_huise_line"/>
+
+</LinearLayout>

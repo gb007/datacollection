@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/ll_all"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/form_module_white"
+    android:orientation="vertical"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:padding="5dp">
+
+        <TextView
+            android:id="@+id/tv_bitian"
+            android:layout_width="8dp"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="*"
+            android:textColor="@color/form_module_black3"
+            android:textSize="@dimen/form_module_text_zhong" />
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/tv_bitian"
+            android:textColor="@color/form_module_black6"
+            android:textSize="@dimen/form_module_text_zhong" />
+        <com.hollysmart.formmodule.view.ClearEditText
+            android:id="@+id/et_value"
+            android:layout_width="220dp"
+            android:layout_height="30dp"
+            android:layout_marginRight="10dp"
+            android:singleLine="true"
+            android:maxLines="1"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@color/form_module_transparent"
+            android:gravity="center|right"
+            android:text=""
+            android:textColor="@color/form_module_black3"
+            android:textCursorDrawable="@null"
+            android:textSize="@dimen/form_module_text_zhong"
+            app:clearButtonMode="whileEditing"/>
+
+
+        <TextView
+            android:id="@+id/tv_tishi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/tv_name"
+            android:text="该项必填"
+            android:textColor="@color/form_module_red"
+            android:textSize="@dimen/form_module_text_zhong"
+            android:visibility="gone"/>
+
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/form_module_huise_line" />
+
+</LinearLayout>

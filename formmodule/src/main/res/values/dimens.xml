@@ -1,0 +1,17 @@
+<resources>
+    <dimen name="form_module_fab_margin">16dp</dimen>
+
+    <dimen name="form_module_text_teda">26dp</dimen>
+    <dimen name="form_module_text_da">22dp</dimen>
+    <dimen name="form_module_text_da2">20dp</dimen>
+    <dimen name="form_module_text_zhong">16dp</dimen>
+<!--    <dimen name="form_module_text_zhongxiao">16dp</dimen>-->
+    <dimen name="form_module_text_xiao">14dp</dimen>
+    <dimen name="form_module_text_texiao">12dp</dimen>
+
+
+    <dimen name="form_module_tool_bar">44dp</dimen>
+    <dimen name="form_module_rv_height">400dp</dimen>
+    <dimen name="form_module_btn_corner_radius">4dp</dimen>
+
+</resources>

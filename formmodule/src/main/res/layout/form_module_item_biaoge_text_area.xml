@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll_all"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/form_module_white"
+    android:orientation="vertical"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    android:paddingTop="8dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:padding="5dp">
+
+        <TextView
+            android:id="@+id/tv_bitian"
+            android:layout_width="8dp"
+            android:layout_height="wrap_content"
+            android:text="*"
+            android:textColor="@color/form_module_black3"
+            android:textSize="@dimen/form_module_text_zhong" />
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/tv_bitian"
+            android:textColor="@color/form_module_black6"
+            android:textSize="@dimen/form_module_text_zhong" />
+
+        <EditText
+            android:id="@+id/et_value"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="12dp"
+            android:layout_toRightOf="@+id/tv_name"
+            android:background="@color/form_module_transparent"
+            android:text=""
+            android:textColor="@color/form_module_black3"
+            android:textCursorDrawable="@null"
+            android:textSize="@dimen/form_module_text_zhong"
+            android:gravity="top"
+            android:inputType="textMultiLine"/>
+
+        <TextView
+            android:id="@+id/tv_tishi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/tv_name"
+            android:text="该项必填"
+            android:textColor="@color/form_module_red"
+            android:textSize="@dimen/form_module_text_zhong"
+            android:visibility="gone"/>
+
+
+
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/form_module_huise_line" />
+
+</LinearLayout>

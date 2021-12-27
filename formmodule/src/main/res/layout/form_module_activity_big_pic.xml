@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/form_module_black"
+    android:fitsSystemWindows="true">
+
+
+    <com.hollysmart.formmodule.statusbar.StatusBarHeightView
+        android:id="@+id/top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/form_module_blue"
+        android:orientation="vertical"
+        app:form_use_type="form_use_padding_top">
+
+
+        <RelativeLayout
+            android:id="@+id/rl_title"
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:layout_alignParentTop="true"
+            android:background="@color/form_module_blue">
+
+
+            <TextView
+                android:id="@+id/iv_back"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="10dp"
+                android:gravity="center"
+                android:text="取消"
+                android:textColor="@color/form_module_white"
+                android:textSize="@dimen/form_module_text_da2" />
+
+
+            <TextView
+                android:id="@+id/tv_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                android:text="下一步"
+                android:textColor="@color/form_module_white"
+                android:textSize="@dimen/form_module_text_da"
+                android:visibility="gone" />
+        </RelativeLayout>
+
+    </com.hollysmart.formmodule.statusbar.StatusBarHeightView>
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/vp_pic_detail"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/rl_yulan"
+        android:layout_below="@+id/top" />
+
+    <RelativeLayout
+        android:id="@+id/rl_yulan"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true">
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="大图模式"
+                android:textColor="@color/form_module_white"
+                android:textSize="@dimen/form_module_text_da" />
+
+            <TextView
+                android:id="@+id/tv_page"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="(1/3)"
+                android:textColor="@color/form_module_white"
+                android:textSize="@dimen/form_module_text_zhong" />
+        </LinearLayout>
+
+
+        <!--<ImageButton-->
+        <!--android:id="@+id/ib_back"-->
+        <!--android:layout_width="60dp"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:background="@color/touming"-->
+        <!--android:src="@mipmap/dbsx"/>-->
+
+
+    </RelativeLayout>
+
+</RelativeLayout>
+
+
+
+
+
+
