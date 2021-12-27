@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Gradle: com.qiniu:happy-dns:0.2.18">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.qiniu/happy-dns/0.2.18/c80e7b7c781f78eea9786e36415256417cbdeecc/happy-dns-0.2.18.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.qiniu/happy-dns/0.2.18/866efced503078803a4347231ce2be896bbd6ef9/happy-dns-0.2.18-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.qiniu/happy-dns/0.2.18/b6862681ee2e0e777b6fc90617a7cf44e0f6eb2a/happy-dns-0.2.18-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

@@ -1,0 +1,15 @@
+<component name="libraryTable">
+  <library name="Gradle: com.xw.repo:xedittext-androidx:2.3.0@aar">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/a51e9cdd5678daa59a3d694f39618e7f/transformed/jetified-xedittext-androidx-2.3.0/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/a51e9cdd5678daa59a3d694f39618e7f/transformed/jetified-xedittext-androidx-2.3.0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/a51e9cdd5678daa59a3d694f39618e7f/transformed/jetified-xedittext-androidx-2.3.0/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.xw.repo/xedittext-androidx/2.3.0/94d9207aa17802e5c02862bc8076594a23ad0c8f/xedittext-androidx-2.3.0-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.xw.repo/xedittext-androidx/2.3.0/24da2f6cb6f7cba8e72f38ada0e389eeaae2cafe/xedittext-androidx-2.3.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

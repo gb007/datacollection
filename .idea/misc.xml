@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.3296875" />
+        <entry key="app/src/main/res/layout/form_module_activity_dynamic_list.xml" value="0.20208333333333334" />
+        <entry key="app/src/main/res/layout/form_module_activity_equipment_list.xml" value="0.2328125" />
+        <entry key="formmodule/src/main/res/layout/form_module_activity_add_pic.xml" value="0.3296875" />
+        <entry key="formmodule/src/main/res/layout/form_module_activity_big_pic.xml" value="0.3296875" />
+        <entry key="formmodule/src/main/res/layout/form_module_activity_dynamic_list.xml" value="0.3296875" />
+        <entry key="formmodule/src/main/res/layout/form_module_activity_equipment_list.xml" value="0.3296875" />
+        <entry key="formmodule/src/main/res/layout/form_module_activity_map_collect_dot.xml" value="0.2552083333333333" />
+        <entry key="formmodule/src/main/res/layout/form_module_activity_venue_detail.xml" value="0.2552083333333333" />
+        <entry key="formmodule/src/main/res/layout/form_module_dateandtimepicker_layout.xml" value="0.2552083333333333" />
+        <entry key="formmodule/src/main/res/layout/form_module_datepicker_layout.xml" value="0.2552083333333333" />
+        <entry key="formmodule/src/main/res/layout/form_module_dialog_loading.xml" value="0.2552083333333333" />
+        <entry key="formmodule/src/main/res/layout/form_module_item_biaoge_danhang.xml" value="0.2552083333333333" />
+        <entry key="formmodule/src/main/res/layout/form_module_item_biaoge_danhang_list.xml" value="0.2552083333333333" />
+        <entry key="formmodule/src/main/res/layout/form_module_item_biaoge_danhang_list_content_child.xml" value="0.2552083333333333" />
+        <entry key="formmodule/src/main/res/layout/form_module_item_biaoge_danhang_xuanze.xml" value="0.2552083333333333" />
+        <entry key="formmodule/src/main/res/layout/form_module_item_biaoge_image_content.xml" value="0.2552083333333333" />
+        <entry key="formmodule/src/main/res/layout/form_module_item_biaoge_password.xml" value="0.2552083333333333" />
+        <entry key="formmodule/src/main/res/layout/form_module_item_biaoge_switch_content.xml" value="0.2552083333333333" />
+        <entry key="formmodule/src/main/res/layout/form_module_item_biaoge_text_area.xml" value="0.2552083333333333" />
+        <entry key="formmodule/src/main/res/layout/form_module_item_equipment_list.xml" value="0.2552083333333333" />
+        <entry key="formmodule/src/main/res/layout/form_module_item_pager_image.xml" value="0.2552083333333333" />
+        <entry key="formmodule/src/main/res/layout/form_module_item_pic_list.xml" value="0.2552083333333333" />
+        <entry key="formmodule/src/main/res/layout/form_module_item_veneu_list.xml" value="0.2552083333333333" />
+        <entry key="formmodule/src/main/res/layout/form_module_layout_lingeman_lv.xml" value="0.2552083333333333" />
+        <entry key="formmodule/src/main/res/layout/form_module_timepicker_layout.xml" value="0.2552083333333333" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

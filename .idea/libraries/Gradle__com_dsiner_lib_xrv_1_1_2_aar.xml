@@ -1,0 +1,15 @@
+<component name="libraryTable">
+  <library name="Gradle: com.dsiner.lib:xrv:1.1.2@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/92a6cf507dd1b3acb8388a4a212fdfd2/transformed/jetified-xrv-1.1.2/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/92a6cf507dd1b3acb8388a4a212fdfd2/transformed/jetified-xrv-1.1.2/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/92a6cf507dd1b3acb8388a4a212fdfd2/transformed/jetified-xrv-1.1.2/res" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.dsiner.lib/xrv/1.1.2/7f171d0ea45c83af68a090161dc63b1e1f48e8ca/xrv-1.1.2-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.dsiner.lib/xrv/1.1.2/2c3b8b8c5ff18a754dbf4f8cc915bbfa5ec04631/xrv-1.1.2-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

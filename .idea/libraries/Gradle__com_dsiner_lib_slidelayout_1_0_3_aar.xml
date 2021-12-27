@@ -1,0 +1,15 @@
+<component name="libraryTable">
+  <library name="Gradle: com.dsiner.lib:slidelayout:1.0.3@aar">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/7d4a8f3b56913679fa880cb3ba745409/transformed/jetified-slidelayout-1.0.3/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/7d4a8f3b56913679fa880cb3ba745409/transformed/jetified-slidelayout-1.0.3/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/7d4a8f3b56913679fa880cb3ba745409/transformed/jetified-slidelayout-1.0.3/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.dsiner.lib/slidelayout/1.0.3/f7147352da9a4dea9d59fb9d2993ff164a36229a/slidelayout-1.0.3-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.dsiner.lib/slidelayout/1.0.3/82b45a251421b7d42bdead08b45192af63c7a40d/slidelayout-1.0.3-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
