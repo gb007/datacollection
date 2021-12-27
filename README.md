@@ -169,7 +169,7 @@ buildscript {
                         .withBoolean("isCheck",false)//查看或编辑 true代表查看false代表编辑
                         .withString("formId",Constants.FORMID_EQUIPMENT)//表单id
                         .withString("dataId",item.get("id").getAsString())//数据id
-                        .withString("strDataJson",venueJson)//表单详细数据(Json形式的string)
+                        .withString("strDataJson",venueJson)//表单详细数据(JsonObject对象转为String)
                         .withString("title","器材信息")//页面标题
                         .navigation(activity,Constants.equipTrasitionCode);
                         
