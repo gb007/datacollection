@@ -174,3 +174,22 @@ buildscript {
                         .navigation(activity,Constants.equipTrasitionCode);
                         
 ````
+
+### 3.5 提交数据或者需改数据成功后返回上一级页面，并返回resultCode=9999以便用来刷新上一页面
+
+````
+
+        /**
+     * 刷新列表数据返回上一级列表
+     */
+    private void returnAndRefreList() {
+        new Handler().postDelayed(new Runnable() {//延迟1s执行，等页面动画执行完成再返回
+            public void run() {
+                //execute the task
+                setResult(resultFreshCode);
+                finish();
+            }
+        }, 1000);
+    }
+    
+````
