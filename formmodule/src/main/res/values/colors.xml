@@ -21,5 +21,7 @@
     <color name="form_module_orange2">#fb8d2c</color>
     <color name="form_module_huise_line">#b5b5b6</color>
     <color name="form_module_color_e6e6e6">#e6e6e6</color>
-
+    <color name="form_module_color_map_line">#6d80fe</color>
+    <color name="form_module_color_map_add_line">#ffff1400</color>
+    <color name="form_module_color_map_fill">#556d80fe</color>
 </resources>

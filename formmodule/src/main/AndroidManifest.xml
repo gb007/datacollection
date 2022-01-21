@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.hollysmart.formmodule">
-
-
     <!-- 允许程序 -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" /> <!-- 允许程序读取外部内存卡 -->
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" /> <!-- 允许程序 -->
@@ -16,18 +14,30 @@
     <uses-permission android:name="android.permission.READ_PHONE_STATE" /> <!-- 允许程序访问CellID或WiFi热点来获取粗略的位置 -->
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
-
     <application>
-       <activity
+        <activity
+            android:name=".activity.MapCollectPlaneActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".activity.MapCollectLineActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"/>
+        <activity
             android:name=".activity.MapCollectDotActivity"
             android:exported="false"
             android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activity.MapCollectDotsActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+
         <activity
             android:name=".activity.FormDetailActivity"
             android:exported="false"
-            android:screenOrientation="portrait"
-            android:hardwareAccelerated="true" />
-
+            android:hardwareAccelerated="true"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".activity.BigPicActivity"
             android:exported="false"
@@ -43,7 +53,6 @@
         <meta-data
             android:name="design_height_in_dp"
             android:value="731" />
-
     </application>
 
 </manifest>

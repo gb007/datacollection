@@ -21,6 +21,8 @@ import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 import com.hollysmart.formmodule.R;
 import com.hollysmart.formmodule.activity.MapCollectDotActivity;
+import com.hollysmart.formmodule.activity.MapCollectDotsActivity;
+import com.hollysmart.formmodule.activity.MapCollectLineActivity;
 import com.hollysmart.formmodule.bean.DictionaryBean;
 import com.hollysmart.formmodule.bean.FormFiledBean;
 import com.hollysmart.formmodule.common.Constants;
@@ -58,7 +60,7 @@ public class RecyclerMapHolder extends FormItemHolder {
     @Override
     public void setData(FormFiledBean formFiledBean, Map<String, List<DictionaryBean>> dicMap, JsonObject jsonObject, boolean isCheck, RecyclerView.Adapter adapter) {
 
-        initFormData(context,formFiledBean,tv_bitian,et_value,itemView);//初始化表单控件
+        initFormData(context, formFiledBean, tv_bitian, et_value, itemView);//初始化表单控件
         tv_name.setText("GPS");
         et_value.setText("");//默认为空
         if (null != jsonObject.get("location_lon") && null != jsonObject.get("location_lat")) {
@@ -84,8 +86,8 @@ public class RecyclerMapHolder extends FormItemHolder {
 //        }
 //        --------------------------常规逻辑结束---------------------------
 
-        et_value.setOnClickListener(v -> startMapActivity(jsonObject,isCheck));
-        iv_arrorw.setOnClickListener(v -> startMapActivity(jsonObject,isCheck));
+        et_value.setOnClickListener(v -> startMapActivity(jsonObject, isCheck));
+        iv_arrorw.setOnClickListener(v -> startMapActivity(jsonObject, isCheck));
     }
 
     /**
@@ -106,13 +108,32 @@ public class RecyclerMapHolder extends FormItemHolder {
                 if (!TextUtils.isEmpty(location_lon) && !TextUtils.isEmpty(location_lat)) {
                     markerLatlng = location_lat + "," + location_lon;
                 }
-                Gson gson = new Gson();
-                String dataJson = gson.toJson(jsonObject);
-                Intent intent = new Intent(context, MapCollectDotActivity.class);
-                intent.putExtra("markerLatlng", markerLatlng);
-                intent.putExtra("isCheck", isCheck);
-                intent.putExtra("dataJson", dataJson);
-                activity.startActivityForResult(intent, Constants.REQUEST_CODE_MAP);
+
+                String personincharge = jsonObject.get("personincharge").getAsString();
+
+
+                if (!TextUtils.isEmpty(personincharge)) {
+
+                    Gson gson = new Gson();
+                    String dataJson = gson.toJson(jsonObject);
+                    Intent intent = new Intent(context, MapCollectDotsActivity.class);
+                    intent.putExtra("markerLatlng", markerLatlng);
+                    intent.putExtra("isCheck", isCheck);
+                    intent.putExtra("dataJson", dataJson);
+                    activity.startActivityForResult(intent, Constants.REQUEST_CODE_MAP);
+                } else {
+
+                    Gson gson = new Gson();
+                    String dataJson = gson.toJson(jsonObject);
+                    Intent intent = new Intent(context, MapCollectLineActivity.class);
+                    intent.putExtra("markerLatlngs", markerLatlng);
+                    intent.putExtra("isCheck", isCheck);
+                    intent.putExtra("dataJson", dataJson);
+                    activity.startActivityForResult(intent, Constants.REQUEST_CODE_MAP);
+
+                }
+
+
             } else {
                 ActivityCompat.requestPermissions(activity, new String[]{Manifest.permission.ACCESS_COARSE_LOCATION}, 3);
             }

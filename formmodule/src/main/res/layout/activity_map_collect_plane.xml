@@ -41,16 +41,6 @@
                 android:textColor="@color/form_module_white"
                 android:textSize="@dimen/form_module_text_da2" />
 
-            <TextView
-                android:id="@+id/tv_save_loc"
-                android:layout_width="60dp"
-                android:layout_height="fill_parent"
-                android:layout_alignParentRight="true"
-                android:gravity="center"
-                android:padding="10dp"
-                android:text="确定"
-                android:textColor="@color/form_module_white" />
-
         </RelativeLayout>
 
     </com.hollysmart.formmodule.statusbar.StatusBarHeightView>
@@ -74,38 +64,11 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_alignParentTop="true"
-            android:gravity="center_vertical">
-
-            <TextView
-                android:id="@+id/tv_mark_lon"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:padding="10dp"
-                android:text="经度"
-                android:textColor="@color/form_module_black" />
-
-            <TextView
-                android:id="@+id/tv_mark_lat"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:padding="10dp"
-                android:text="纬度"
-                android:textColor="@color/form_module_black" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:visibility="visible">
+            android:layout_alignParentBottom="true">
 
             <Button
-                android:id="@+id/btn_add_dot"
+                android:id="@+id/btn_add"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_margin="20dp"
@@ -116,7 +79,7 @@
                 android:textSize="@dimen/form_module_text_zhong" />
 
             <Button
-                android:id="@+id/btn_remove_dot"
+                android:id="@+id/btn_chexiao"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_margin="20dp"
@@ -126,7 +89,17 @@
                 android:textColor="@color/form_module_white"
                 android:textSize="@dimen/form_module_text_zhong" />
 
-
+            <Button
+                android:id="@+id/btn_save"
+                android:layout_width="40dp"
+                android:layout_height="30dp"
+                android:layout_margin="20dp"
+                android:layout_weight="1"
+                android:background="@drawable/form_module_btn_shape"
+                android:text="保存"
+                android:textColor="@color/form_module_white"
+                android:textSize="@dimen/form_module_text_zhong"
+                android:visibility="gone"/>
 
 
         </LinearLayout>

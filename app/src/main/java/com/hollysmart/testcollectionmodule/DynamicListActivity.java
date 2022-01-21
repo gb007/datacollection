@@ -18,10 +18,13 @@ import com.alibaba.android.arouter.facade.annotation.Route;
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.blankj.utilcode.util.Utils;
 import com.d.lib.xrv.LRecyclerView;
+import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.hjq.toast.ToastUtils;
+import com.hollysmart.formmodule.activity.MapCollectDotsActivity;
+import com.hollysmart.formmodule.activity.MapCollectLineActivity;
 import com.hollysmart.testcollectionmodule.Utils.LogUtils;
 import com.hollysmart.testcollectionmodule.adapter.VenueListAdapter;
 import com.hollysmart.testcollectionmodule.CaiBaseActivity;
@@ -131,7 +134,6 @@ public class DynamicListActivity extends CaiBaseActivity implements OnRefreshLis
         if(!TextUtils.isEmpty(token)){//设置引用采集模块传递过来的token
             Constants.TOKEN = token;
         }
-
     }
 
     /**

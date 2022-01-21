@@ -13,7 +13,7 @@ import com.hollysmart.formmodule.base.FormModuleInit;
 public class MainActivity extends AppCompatActivity {
 
     public String API_SERVER_URL = "http://10.2.9.150:8885";
-    public static String TOKEN = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NDAyMjY4NDYsInVzZXJuYW1lIjoiamVlY2cifQ.kxcH9hXv1JinQazQNaYtwIQWfQZ0wcWu7e3A7vaJ1oU";
+    public static String TOKEN = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NDI3NDQzMTksInVzZXJuYW1lIjoiamVlY2cifQ.Pgxq1MQ6QRrp4ClqoTgk5is26Max3kucOTp-iA5yvHo";
     //文件上传七牛地址
     public String PIC_IP = "https://qiniu.hollysmart.com.cn/";
     //项目名（七牛上传文件，文件名前缀拼接项目名）

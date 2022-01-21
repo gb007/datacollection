@@ -58,6 +58,8 @@ public class Constants {
     public static final int REQUEST_CODE_CUT_IMAGE = 3;//裁剪图片
     //Activity RESULT_CODE
     public static final int RESULT_CODE_MAP = 2;//地图选取坐标
+    public static final int RESULT_CODE_MAP_LINE = 3;//地图选取坐标(线集合)
+    public static final int RESULT_CODE_MAP_PLANE = 4;//地图选取坐标(图形集合)
     public static final int RESULT_CODE_ADD_IMAGE = 2;//选取图片
     //地图默认位置
     public static final double DEFAULT_LONGITUDE = 35.201548;//经度////35.201548

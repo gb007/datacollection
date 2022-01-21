@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.location.Location;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -23,17 +24,19 @@ import com.amap.api.maps.model.Marker;
 import com.amap.api.maps.model.MarkerOptions;
 import com.amap.api.maps.model.MyLocationStyle;
 import com.amap.api.maps.model.Polyline;
-import com.blankj.utilcode.util.ToastUtils;
+import com.google.gson.Gson;
+import com.hjq.toast.ToastUtils;
 import com.hollysmart.formmodule.R;
 import com.hollysmart.formmodule.Utils.CCM_Delay;
 import com.hollysmart.formmodule.Utils.LogUtils;
 import com.hollysmart.formmodule.base.CaiBaseActivity;
+import com.hollysmart.formmodule.bean.Postions;
 import com.hollysmart.formmodule.common.Constants;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class MapCollectDotActivity extends CaiBaseActivity {
+public class MapCollectDotsActivity extends CaiBaseActivity {
 
 
     /**
@@ -45,13 +48,23 @@ public class MapCollectDotActivity extends CaiBaseActivity {
     private TextView tv_save_loc;
     private MapView map;
     private AMap aMap;
-    private Marker mapMarker;
+    //    private Marker mapMarker;
     private LatLng locationLatLng;
     private boolean isWeixingModle = false;  //true 卫星地图模式  false 普通模式
     private String markerLatlng;//选中坐标点
     private String dataJson;//表单对象数据
+    //地图中心点坐标
     private String mark_lat;
     private String mark_lon;
+
+
+    //传入的需绘制的坐标点
+    private Postions postions;
+
+    //点位置
+    private List<LatLng> points = new ArrayList<>();
+    //新增的标记点
+    private List<Marker> addMapScreenMarkers = new ArrayList<>();
 
 
     private AMap.OnMyLocationChangeListener myLocationChangeListener = new AMap.OnMyLocationChangeListener() {
@@ -163,6 +176,36 @@ public class MapCollectDotActivity extends CaiBaseActivity {
     public void init() {
         markerLatlng = getIntent().getStringExtra("markerLatlng");
         dataJson = getIntent().getStringExtra("dataJson");
+
+
+        markerLatlng = "{\n" +
+                "    \"postions\":[\n" +
+                "        {\n" +
+                "            \"fd_lng\":\"116.288337\",\n" +
+                "            \"fd_lnt\":\"39.958788\"\n" +
+                "        },\n" +
+                "        {\n" +
+                "            \"fd_lng\":\"116.294302\",\n" +
+                "            \"fd_lnt\":\"39.958689\"\n" +
+                "        },\n" +
+                "        {\n" +
+                "            \"fd_lng\":\"116.299924\",\n" +
+                "            \"fd_lnt\":\"39.956403\"\n" +
+                "        },\n" +
+                "        {\n" +
+                "            \"fd_lng\":\"116.280226\",\n" +
+                "            \"fd_lnt\":\"39.952768\"\n" +
+                "        },\n" +
+                "        {\n" +
+                "            \"fd_lng\":\"116.286535\",\n" +
+                "            \"fd_lnt\":\"39.953557\"\n" +
+                "        }\n" +
+                "    ]\n" +
+                "}";
+
+
+        Gson gson = new Gson();
+        postions = gson.fromJson(markerLatlng, Postions.class);
     }
 
 
@@ -170,13 +213,16 @@ public class MapCollectDotActivity extends CaiBaseActivity {
      * 地图上初始化坐标点
      */
     private void initPoints() {
-
-        if (!TextUtils.isEmpty(markerLatlng)) {
-            String[] latLng = markerLatlng.split(",");
-            LatLng markLatlng = new LatLng(new Double(latLng[0]), new Double(latLng[1]));
-            drowMarkerInMap(markLatlng);
+        if (null != postions) {
+            List<Postions.Point> points = postions.getPostions();
+            if (null != points && points.size() > 0) {
+                for (int i = 0; i < points.size(); i++) {
+                    Postions.Point point = points.get(i);
+                    LatLng markLatlng = new LatLng(new Double(point.getFdLnt()), new Double(point.getFdLng()));
+                    drowMarkerInMap(markLatlng);
+                }
+            }
         } else {
-            //位移到定位点
             new CCM_Delay(2000, new CCM_Delay.DelayIF() {
                 @Override
                 public void operate() {
@@ -184,7 +230,26 @@ public class MapCollectDotActivity extends CaiBaseActivity {
                     aMap.animateCamera(mCameraUpdate);
                 }
             });
+
         }
+
+
+//        if (!TextUtils.isEmpty(markerLatlng)) {
+//            String[] latLng = markerLatlng.split(",");
+//            LatLng markLatlng = new LatLng(new Double(latLng[0]), new Double(latLng[1]));
+//            drowMarkerInMap(markLatlng);
+//        } else {
+//            //位移到定位点
+//            new CCM_Delay(2000, new CCM_Delay.DelayIF() {
+//                @Override
+//                public void operate() {
+//                    CameraUpdate mCameraUpdate = CameraUpdateFactory.newCameraPosition(new CameraPosition(locationLatLng, 17, 0, 0));
+//                    aMap.animateCamera(mCameraUpdate);
+//                }
+//            });
+//        }
+
+
     }
 
     /**
@@ -195,7 +260,7 @@ public class MapCollectDotActivity extends CaiBaseActivity {
         if (latLng != null) {
             //画点
             BitmapDescriptor bitmap = BitmapDescriptorFactory.fromResource(R.mipmap.form_module_icon_map_mark);
-            mapMarker = aMap.addMarker(new MarkerOptions().icon(bitmap).position(latLng));
+            aMap.addMarker(new MarkerOptions().icon(bitmap).position(latLng));
             aMap.animateCamera(CameraUpdateFactory.newCameraPosition(new CameraPosition(latLng, 17, 0, 0)));
         }
     }
@@ -205,12 +270,16 @@ public class MapCollectDotActivity extends CaiBaseActivity {
      * 添加
      */
     private void addDot() {
-        if (mapMarker != null)
-            mapMarker.remove();
         CameraPosition cameraPosition = aMap.getCameraPosition();
         LatLng latLng = cameraPosition.target;
-        BitmapDescriptor bitmap = BitmapDescriptorFactory.fromResource(R.mipmap.form_module_icon_map_mark);//form_module_resflag_add
-        mapMarker = aMap.addMarker(new MarkerOptions().icon(bitmap).position(latLng));
+        if (points.contains(latLng)) {
+            com.hjq.toast.ToastUtils.show("已添加该坐标点");
+            return;
+        }
+        points.add(latLng);
+        BitmapDescriptor bitmap = BitmapDescriptorFactory.fromResource(R.mipmap.form_module_resflag_add);//form_module_resflag_add
+        Marker marker = aMap.addMarker(new MarkerOptions().icon(bitmap).position(latLng));
+        addMapScreenMarkers.add(marker);
     }
 
 
@@ -218,11 +287,15 @@ public class MapCollectDotActivity extends CaiBaseActivity {
      * 撤销
      */
     private void removeDot() {
-        if (mapMarker != null) {
-            mapMarker.remove();
-            mapMarker = null;
+
+        if (points.size() > 0) {
+            int index = points.size() - 1;
+            Marker marker = addMapScreenMarkers.get(index);
+            marker.remove();
+            addMapScreenMarkers.remove(index);
+            points.remove(index);
         } else {
-            ToastUtils.showShort("暂无坐标点可撤销");
+            com.hjq.toast.ToastUtils.show("暂无坐标点可撤销");
         }
     }
 
@@ -317,6 +390,24 @@ public class MapCollectDotActivity extends CaiBaseActivity {
      * 保存
      */
     private void save() {
+
+        if (points.size() < 1) {
+            ToastUtils.show("请添加位置信息");
+            return;
+        }
+
+        Postions postions = new Postions();
+        List<Postions.Point> postions_points = new ArrayList<>();
+        for (int i = 0; i < points.size(); i++) {
+            LatLng latLng = points.get(i);
+            Postions.Point point = new Postions.Point();
+            point.setFdLng(latLng.longitude + "");
+            point.setFdLnt(latLng.latitude + "");
+            postions_points.add(point);
+        }
+        postions.setPostions(postions_points);
+        Gson gson = new Gson();
+        String str_Postions = gson.toJson(postions);
         String strPoints = markerLatlng;
         Intent intent = new Intent();
         intent.putExtra("mark_lat", mark_lat);
